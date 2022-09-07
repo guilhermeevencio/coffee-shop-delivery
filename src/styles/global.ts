@@ -18,4 +18,8 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-size: 1rem;
   }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Baloo 2', cursive;
+  }
 `
