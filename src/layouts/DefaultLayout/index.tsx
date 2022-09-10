@@ -5,7 +5,7 @@ import { Header } from '../../components/Header'
 
 const DefaultLayout = () => {
   return (
-    <div>
+    <div style={{ position: 'relative' }}>
       <Header />
       <Outlet />
     </div>

@@ -18,27 +18,27 @@ export const TextDiv = styled.div`
 
 export const TextSection = styled.div`
   h1 {
-    margin-left: 10rem;
     width: 36.75rem;
     font-size: 3rem;
     margin-bottom: 1rem;
+    margin-left: 10rem;
   }
 
   p {
-    margin-left: 10rem;
     font-size: 1.25rem;
+    margin-left: 10rem;
   }
 `
 
 export const IconsMainDiv = styled.div`
   height: 5.25rem;
-  margin-left: 10rem;
   display: flex;
   flex-direction: column;
   align-content: flex-start;
   flex-wrap: wrap;
   width: 567px;
   gap: 0.5rem;
+  margin-left: 10rem;
 `
 
 export const Icondescription = styled.div`
