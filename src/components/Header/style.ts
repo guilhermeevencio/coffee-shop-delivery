@@ -9,6 +9,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 2rem 10rem;
+  background: ${(props) => props.theme.background};
 
   img {
     height: 40px;

@@ -1,6 +1,6 @@
 import coffeeImgs from '../../assets/coffee-images'
 
-interface CoffeeMock {
+export interface CoffeeMock {
   image: string
   tag: string[]
   title: string
