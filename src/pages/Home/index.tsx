@@ -1,3 +1,9 @@
+import Main from '../../components/Main'
+
 export function Home() {
-  return <div>home</div>
+  return (
+    <div>
+      <Main />
+    </div>
+  )
 }
