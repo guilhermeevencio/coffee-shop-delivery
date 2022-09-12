@@ -1,13 +1,14 @@
 import { coffeeInfoArray } from '../../helpers/mocks/coffeeMock'
 import { ProductCard } from '../../components/ProductCard'
+import { ProductsSectionContainer } from './styles'
 
 const ProductsSection = () => {
   return (
-    <div>
+    <ProductsSectionContainer>
       {coffeeInfoArray.map((coffee) => (
         <ProductCard {...coffee} key={coffee.title} />
       ))}
-    </div>
+    </ProductsSectionContainer>
   )
 }
 

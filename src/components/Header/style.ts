@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
+  z-index: 1;
   position: sticky;
   top: 0;
   width: 100%;
