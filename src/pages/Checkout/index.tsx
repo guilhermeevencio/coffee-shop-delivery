@@ -1,4 +1,10 @@
-import { MapPinLine } from 'phosphor-react'
+import {
+  MapPinLine,
+  Money,
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+} from 'phosphor-react'
 
 export function Checkout() {
   return (
@@ -27,14 +33,24 @@ export function Checkout() {
           </form>
         </div>
         <div>
+          <CurrencyDollar />
           <p>Pagamento</p>
           <p>
             O pagamento é feito na entrega. Escolha a forma que deseja pagar
           </p>
           <div>
-            <button type="button">Cartão de Crédito</button>
-            <button type="button">Cartão de Débito</button>
-            <button type="button">Dinheiro</button>
+            <button type="button">
+              <CreditCard />
+              Cartão de Crédito
+            </button>
+            <button type="button">
+              <Bank />
+              Cartão de Débito
+            </button>
+            <button type="button">
+              <Money />
+              Dinheiro
+            </button>
           </div>
         </div>
       </div>
