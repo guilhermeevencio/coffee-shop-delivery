@@ -6,7 +6,7 @@ type Props = {
 }
 
 export function Provider({ children }: Props) {
-  const [cartItems, setCartItems] = useState<ICartItem[] | null>(null)
+  const [cartItems, setCartItems] = useState<ICartItem[] | []>([])
 
   const contextValue = {
     cartItems,

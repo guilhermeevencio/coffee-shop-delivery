@@ -72,16 +72,26 @@ export const CartContainer = styled.div`
     p {
       font-size: 1rem;
     }
-  }
 
-  button {
-    border: none;
-    color: ${(props) => props.theme.purple};
-    background: none;
-    border-radius: 6px;
-    font-size: 1.5rem;
-    width: 12px;
+    button: {
+      border: none;
+    }
   }
+`
+export const AddAndRemoveButtons = styled.button`
+  border: none;
+  background: none;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  width: 12px;
+  cursor: pointer;
+`
+
+export const StyledInput = styled.input`
+  background-color: transparent;
+  text-align: center;
+  width: 32px;
+  border: none;
 `
 
 export const CartIconContainer = styled.section`
@@ -94,4 +104,22 @@ export const CartIconContainer = styled.section`
   justify-content: center;
   border-radius: 6px;
   font-size: 1rem;
+`
+
+export const AddToCartButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: ${(props) => props.theme.white};
+  cursor: pointer;
+  /* border: 1px solid green;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  /* width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 1rem; */
 `
