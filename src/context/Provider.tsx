@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { coffeeInfoArray } from '../helpers/mocks/coffeeMock'
 import { AppContext, ICartItem } from './AppContext'
 
 type Props = {
@@ -6,7 +7,10 @@ type Props = {
 }
 
 export function Provider({ children }: Props) {
-  const [cartItems, setCartItems] = useState<ICartItem[] | []>([])
+  const [cartItems, setCartItems] = useState<ICartItem[] | []>([
+    { ...coffeeInfoArray[0], quantity: 2 },
+    { ...coffeeInfoArray[4], quantity: 3 },
+  ])
 
   const contextValue = {
     cartItems,

@@ -5,10 +5,27 @@ import {
   CreditCard,
   CurrencyDollar,
 } from 'phosphor-react'
+import { CheckoutProduct } from '../../components/CheckoutProduct'
+import { CheckoutContainer } from './style'
+import { useContext, useEffect, useState } from 'react'
+import { AppContext } from '../../context/AppContext'
 
 export function Checkout() {
+  const { cartItems } = useContext(AppContext)
+  const [totalCart, setTotalCart] = useState(0)
+
+  useEffect(() => {
+    console.log(cartItems)
+
+    let total = 0
+    cartItems.forEach((item) => {
+      total += item.price * item.quantity
+    })
+    setTotalCart(total)
+    console.log(totalCart)
+  }, [cartItems])
   return (
-    <div>
+    <CheckoutContainer>
       <div>
         <h3>Complete seu pedido</h3>
         <div>
@@ -58,14 +75,29 @@ export function Checkout() {
         <h3>Cafés selecinados</h3>
         <div>
           {/* colocar aqui os itens que estão salvos no carrinho */}
+          {cartItems.map((item) => (
+            <CheckoutProduct {...item} key={item.title} />
+          ))}
           <div>
-            <p>Total de Itens</p>
-            <p>Entrega</p>
-            <p>Total</p>
+            <p>
+              Total de Itens:{' '}
+              {totalCart.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </p>
+            <p>Entrega: R$ 3,50</p>
+            <p>
+              Total:{' '}
+              {(totalCart + 3.5).toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+              })}
+            </p>
           </div>
           <button type="button">Confirmar Pedido</button>
         </div>
       </div>
-    </div>
+    </CheckoutContainer>
   )
 }
