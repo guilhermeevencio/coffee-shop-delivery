@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { coffeeInfoArray } from '../helpers/mocks/coffeeMock'
-import { AppContext, ICartItem } from './AppContext'
+import { initialState } from '../pages/Checkout'
+import { AppContext, ICartItem, IFormData } from './AppContext'
 
 type Props = {
   children: React.ReactNode
@@ -11,10 +12,13 @@ export function Provider({ children }: Props) {
     { ...coffeeInfoArray[0], quantity: 2 },
     { ...coffeeInfoArray[4], quantity: 3 },
   ])
+  const [formData, setFormData] = useState<IFormData>(initialState)
 
   const contextValue = {
     cartItems,
     setCartItems,
+    formData,
+    setFormData,
   }
 
   return (
