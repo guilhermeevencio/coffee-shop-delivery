@@ -9,8 +9,12 @@ import mapPinSuccess from '../../assets/map-pin-success.svg'
 import time from '../../assets/time-icon.svg'
 import moneyFill from '../../assets/money-fill.svg'
 import illustration from '../../assets/success-illustration.svg'
+import { useContext } from 'react'
+import { AppContext } from '../../context/AppContext'
 
 export function Success() {
+  const { formData } = useContext(AppContext)
+
   return (
     <SucessDiv>
       <HeaderText>Uhu! Pedido confirmado</HeaderText>
@@ -20,9 +24,9 @@ export function Success() {
           <DetailsDiv>
             <img src={mapPinSuccess} alt="pin" />
             <p>
-              Entrega em <strong>Rua João Daniel Martinelli, 102 </strong>
+              Entrega em <strong>{formData.street}</strong>
               <br />
-              Farrapos - Porto Alegre, RS
+              {formData.district} - Porto Alegre, RS
             </p>
           </DetailsDiv>
           <DetailsDiv>
@@ -36,7 +40,7 @@ export function Success() {
             <img src={moneyFill} alt="pin" />
             <p>
               Pagamento na entrega <br />
-              <strong>Cartão de crédito</strong>
+              <strong>{formData.paymentMethod}</strong>
             </p>
           </DetailsDiv>
         </DetailsContainer>
